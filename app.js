@@ -4,7 +4,7 @@ const Application = PIXI.Application;
 
 // Based somewhat on this article by Spicy Yoghurt
 // URL for further reading: https://spicyyoghurt.com/tutorials/html5-javascript-game-development/collision-detection-physics
-const app = new PIXI.Application({width: 1400, height: 700, backgroundColor: 0x00000});
+const app = new PIXI.Application({width: window.innerWidth, height: window.innerHeight, backgroundColor: 0x00000});
 document.body.appendChild(app.view);
 
 // Options for how objects interact
