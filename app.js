@@ -4,7 +4,7 @@ const Application = PIXI.Application;
 
 // Based somewhat on this article by Spicy Yoghurt
 // URL for further reading: https://spicyyoghurt.com/tutorials/html5-javascript-game-development/collision-detection-physics
-const app = new PIXI.Application({ backgroundColor: 0x111111 });
+const app = new PIXI.Application({width: 1400, height: 700, backgroundColor: 0x00000});
 document.body.appendChild(app.view);
 
 // Options for how objects interact
@@ -75,8 +75,8 @@ function distanceBetweenTwoPoints(p1, p2) {
 // The green square we will knock about
 const greenSquare = new PIXI.Sprite(PIXI.Texture.WHITE);
 greenSquare.position.set((app.screen.width - 100) / 2, (app.screen.height - 100) / 2);
-greenSquare.width = 100;
-greenSquare.height = 100;
+greenSquare.width = 50;
+greenSquare.height = 50;
 greenSquare.tint = '0x00FF00';
 greenSquare.acceleration = new PIXI.Point(0);
 greenSquare.mass = 3;
@@ -84,8 +84,8 @@ greenSquare.mass = 3;
 // The square you move around
 const redSquare = new PIXI.Sprite(PIXI.Texture.WHITE);
 redSquare.position.set(0, 0);
-redSquare.width = 100;
-redSquare.height = 100;
+redSquare.width = 50;
+redSquare.height = 50;
 redSquare.tint = '0xFF0000';
 redSquare.acceleration = new PIXI.Point(0);
 redSquare.mass = 1;
