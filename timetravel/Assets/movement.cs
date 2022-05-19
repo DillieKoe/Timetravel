@@ -5,7 +5,7 @@ using UnityEngine;
 public class movement : MonoBehaviour
 {
     Rigidbody2D body;
-
+ 
     float horizontal;
     float vertical;
 
