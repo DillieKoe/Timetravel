@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class movement : MonoBehaviour
 {
-    Rigidbody2D body;
+    Rigidbody2D rb;
  
     float horizontal;
     float vertical;
@@ -15,7 +15,7 @@ public class movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        body = GetComponent<Rigidbody2D>();        
+        rb = GetComponent<Rigidbody2D>();        
     }
 
     // Update is called once per frame
@@ -27,6 +27,6 @@ public class movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);   
+        rb.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);   
     }
 }
