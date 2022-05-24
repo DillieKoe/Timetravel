@@ -1,6 +1,6 @@
 const Application = PIXI.Application;
 
-
+// hi
 
 // Based somewhat on this article by Spicy Yoghurt
 // URL for further reading: https://spicyyoghurt.com/tutorials/html5-javascript-game-development/collision-detection-physics
