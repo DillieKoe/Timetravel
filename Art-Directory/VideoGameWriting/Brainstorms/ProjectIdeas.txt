@@ -1,0 +1,38 @@
+Loose Concepts: 
+    - This guy, he meet another guy; he lost his pencil 3 days ago. You have to get it back AT ALL COST.
+    - You unlock a chracter and the dialog changes/new stories
+    - Self instert (matrix, art and slaving away)
+
+Main Concepts/Over-Arc Idea's: 
+    - Time Travel
+    - 2D
+    - Left To Right Traversal
+    - Platformer
+    - comedic theme
+
+Fetures:
+    - Character Interaction
+    - Puzzle aspects
+    - 2 characters
+
+
+functional for the guys:
+    - diaglog
+    - sprites
+    - level
+    - animation
+    - tilemaps
+    - music
+    - doors for travel
+
+themes:
+    - Egypt
+    - VampyBoi!!
+    - Norse
+    - Sailing Era (VOC)
+    - French Revolution
+    - Cold War
+    - WW1
+    - Dutch Eating Their Prime Minister
+    - Greek
+    - LBGTQ+ 80's

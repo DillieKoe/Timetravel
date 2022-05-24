@@ -1,0 +1,17 @@
+Jane:
+ - Art Directory
+ - Music Directory 
+ - Creative Writing
+ - Project Lead
+
+Bram:
+ - C# Scripting
+ - Unity Scripting
+
+Dylan:
+ - Level Design
+ - Art Placement In Game
+
+Lucas:
+ - 2nd Project Lead
+ - Learning Github
