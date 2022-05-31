@@ -4,29 +4,47 @@ using UnityEngine;
 
 public class movement : MonoBehaviour
 {
-    Rigidbody2D body;
- 
-    float horizontal;
-    float vertical;
-
-    public float runSpeed = 10.0f;
-    
+    Rigidbody2D rb;
+    public float speed = 20;
+   
     
     // Start is called before the first frame update
     void Start()
     {
-        body = GetComponent<Rigidbody2D>();        
+        rb = GetComponent<Rigidbody2D>();  
+
+          
     }
 
     // Update is called once per frame
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical");
-    }
-
-    private void FixedUpdate()
-    {
-        body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);   
+       if (Input.GetKey(KeyCode.D))
+       {
+           rb.velocity = new Vector2(speed, rb.velocity.y);
+       }
+        else if (Input.GetKey(KeyCode.A))
+       {
+           rb.velocity = new Vector2(-speed, rb.velocity.y);
+       }
+       else 
+       {
+           rb.velocity = new Vector2(0, rb.velocity.y);
+           rb.gravityScale =0; 
+       }
+        if (Input.GetKey(KeyCode.S))
+       {
+            rb.gravityScale =1000; 
+       }
+       else if (Input.GetKey(KeyCode.W))
+       {
+           rb.gravityScale =1; 
+           
+       }
+       else 
+       {
+           
+           rb.gravityScale =20;
+       }
     }
 }
