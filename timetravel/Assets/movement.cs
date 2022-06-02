@@ -14,11 +14,25 @@ public class movement : MonoBehaviour
     public Transform groundCheck;
     public float groundCheckRadius;
 
- void Start()
+    void Start()
     {
         rb = GetComponent<Rigidbody2D>(); 
         //jumpTimeCounter = jumpTime;
        
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        //Output the Collider's GameObject's name
+        print(collision.collider.name);
+
+        if(collision.collider.name == "bounce") {
+            bouncyBlock();
+        }
+    }
+
+    void bouncyBlock(){
+        rb.velocity = new Vector2 (rb.velocity.x, 100000);
     }
 
     // Update is called once per frame
