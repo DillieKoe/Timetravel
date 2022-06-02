@@ -13,7 +13,7 @@ public class movement : MonoBehaviour
     public LayerMask whatIsGround;
     public Transform groundCheck;
     public float groundCheckRadius;
- 
+
  void Start()
     {
         rb = GetComponent<Rigidbody2D>(); 
@@ -57,13 +57,7 @@ public class movement : MonoBehaviour
        {
           speed = 20;
        }
-      
-     
-    
-        
 
-
-    
         if (Input.GetKey(KeyCode.W))
         {
             System.Console.WriteLine("3");

@@ -166,7 +166,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 62548410}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a9f043eebc7ecfb42a9dfdfa55ec4b62, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2159,7 +2159,7 @@ GameObject:
   - component: {fileID: 996368979}
   - component: {fileID: 996368982}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2227,8 +2227,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: ee3029bacaa80b94a93156357473ad30, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Color: {r: 1, g: 0.32422104, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2297,7 +2297,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   groundCheck: {fileID: 996368981}
-  groundCheckRadius: 1
+  groundCheckRadius: 0.5
 --- !u!224 &996368981
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2307,7 +2307,7 @@ RectTransform:
   m_GameObject: {fileID: 996368974}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 519420032}
@@ -2319,8 +2319,8 @@ RectTransform:
   m_AnchoredPosition: {x: -3.2197, y: 1.8566995}
   m_SizeDelta: {x: 0.5, y: 0.8666}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!70 &996368982
-CapsuleCollider2D:
+--- !u!58 &996368982
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2332,6 +2332,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.006911695}
-  m_Size: {x: 1, y: 0.9861766}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
