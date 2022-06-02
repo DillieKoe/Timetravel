@@ -43,7 +43,10 @@ public class movement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.S))
        {
-            rb.gravityScale =1000; 
+            rb.gravityScale =100; 
+       }
+       else {
+           rb.gravityScale =20;
        }
          if (Input.GetKey(KeyCode.LeftShift))
        {
@@ -61,7 +64,7 @@ public class movement : MonoBehaviour
         }
         
     
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKey(KeyCode.W))
        {
            if(grounded){
                 rb.velocity = new Vector2 (rb.velocity.x, jumpForce);
@@ -69,7 +72,7 @@ public class movement : MonoBehaviour
            }
        }
     
-        if (Input.GetKeyDown(KeyCode.W) && !stoppedJumping)
+        if (Input.GetKey(KeyCode.W) && !stoppedJumping)
         {
             //and your counter hasn't reached zero...
             if(jumpTimeCounter > 0)

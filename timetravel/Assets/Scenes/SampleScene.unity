@@ -2292,13 +2292,13 @@ MonoBehaviour:
   grounded: 0
   jumpTime: 3
   jumpTimeCounter: 0
-  jumpForce: 10
+  jumpForce: 25
   stoppedJumping: 0
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   groundCheck: {fileID: 996368981}
-  groundCheckRadius: 0
+  groundCheckRadius: 1
 --- !u!224 &996368981
 RectTransform:
   m_ObjectHideFlags: 0
