@@ -13,11 +13,14 @@ public class movement : MonoBehaviour
     public LayerMask whatIsGround;
     public Transform groundCheck;
     public float groundCheckRadius;
+    public float boost = 10;
+    
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>(); 
         //jumpTimeCounter = jumpTime;
+        
        
     }
 
@@ -29,11 +32,29 @@ public class movement : MonoBehaviour
         if(collision.collider.name == "bounce") {
             bouncyBlock();
         }
+         if(collision.collider.name == "death") {
+            death();
+        }
+          if(collision.collider.name == "lava") {
+           death();
+        }
+          if(collision.collider.name == "nojumpzone") {
+           grounded = false;
+        }
+         if(collision.collider.name == "diamand") {
+           print("je hebt een diamand gevonden");
+            
+        }
     }
 
     void bouncyBlock(){
-        rb.velocity = new Vector2 (rb.velocity.x, 100000);
+        }
+    
+    void death(){
+       transform.position = new Vector3(-65, 2, 0);
+        print("you died");
     }
+   
 
     // Update is called once per frame
     void Update()
