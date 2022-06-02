@@ -1,2 +1,3 @@
-timetravel/Library/
-timetravel/Temp/
+timetravel/Library
+timetravel/Temp
+node_modules
