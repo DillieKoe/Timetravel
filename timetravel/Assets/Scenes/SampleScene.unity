@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 62548414}
   - component: {fileID: 62548413}
   - component: {fileID: 62548412}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: mainTilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2012,7 +2012,7 @@ GameObject:
   m_Component:
   - component: {fileID: 201833712}
   - component: {fileID: 201833711}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2290,10 +2290,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   grounded: 0
-  jumpTime: 3
+  jumpTime: 0.25
   jumpTimeCounter: 0
   jumpForce: 25
-  stoppedJumping: 0
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64

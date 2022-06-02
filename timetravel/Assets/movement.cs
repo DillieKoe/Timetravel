@@ -1,31 +1,31 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class movement : MonoBehaviour
 {
-    Rigidbody2D rb;
+    private Rigidbody2D rb;
     public float speed = 20;
     public bool grounded;
-    public float jumpTime;
+    public float jumpTime =1;
     public float jumpTimeCounter;
     public float jumpForce = 50;
-    public bool stoppedJumping;
     public LayerMask whatIsGround;
     public Transform groundCheck;
     public float groundCheckRadius;
  
-    void Start()
-    
+ void Start()
     {
-        rb = GetComponent<Rigidbody2D>();  
-        jumpTimeCounter = jumpTime;
+        rb = GetComponent<Rigidbody2D>(); 
+        //jumpTimeCounter = jumpTime;
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        grounded = Physics2D.OverlapCircle (groundCheck.position, groundCheckRadius, whatIsGround);
+        grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
+       
        if (Input.GetKey(KeyCode.D))
        {
            rb.velocity = new Vector2(speed, rb.velocity.y);
@@ -38,57 +38,58 @@ public class movement : MonoBehaviour
        else 
        {
            rb.velocity = new Vector2(0, rb.velocity.y);
-           rb.gravityScale =0; 
+           
        }
 
         if (Input.GetKey(KeyCode.S))
        {
-            rb.gravityScale =100; 
+            rb.gravityScale =30; 
        }
-       else {
+       else 
+       {
            rb.gravityScale =20;
        }
          if (Input.GetKey(KeyCode.LeftShift))
        {
-           speed = 40;         
+           speed = 40;      
        }
        else 
        {
           speed = 20;
        }
       
-       if(grounded)
+     
+    
+        
+
+
+    
+        if (Input.GetKey(KeyCode.W))
         {
-            //the jumpcounter is whatever we set jumptime to in the editor.
-            jumpTimeCounter = jumpTime;
+            System.Console.WriteLine("3");
+            if(jumpTimeCounter > 0)
+            {
+                // keep jumping!
+                rb.velocity = new Vector2 (rb.velocity.x, jumpForce);
+                jumpTimeCounter = jumpTimeCounter - Time.deltaTime;
+            
+            }
+                
         }
         
     
-        if (Input.GetKey(KeyCode.W))
-       {
-           if(grounded){
-                rb.velocity = new Vector2 (rb.velocity.x, jumpForce);
-                stoppedJumping = false;
-           }
-       }
-    
-        if (Input.GetKey(KeyCode.W) && !stoppedJumping)
+        if (Input.GetKey(KeyCode.W) && grounded)
         {
-            //and your counter hasn't reached zero...
-            if(jumpTimeCounter > 0)
-            {
-                //keep jumping!
-                rb.velocity = new Vector2 (rb.velocity.x, jumpForce);
-                jumpTimeCounter -= Time.deltaTime;
-            }
+            
+            rb.velocity = new Vector2 (rb.velocity.x, jumpForce);
+            jumpTimeCounter = jumpTime;
+                
         }
         
         if(Input.GetKeyUp(KeyCode.W))
         {
-            //stop jumping and set your counter to zero.  The timer will reset once we touch the ground again in the update function.
             jumpTimeCounter = 0;
-            stoppedJumping = true;
         }
-        
     }
+        
 }
