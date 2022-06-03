@@ -15,5 +15,3 @@ Dylan:
 Lucas:
  - 2nd Project Lead
  - Learning Github
- - Basic Understanding C#
- - Help Jane With Art
