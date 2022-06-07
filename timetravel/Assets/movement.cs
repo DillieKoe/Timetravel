@@ -45,6 +45,26 @@ public class movement : MonoBehaviour
            print("je hebt een diamand gevonden");
             
         }
+         if(collision.collider.name == "portal 1") {
+           transform.position = new Vector3(210,10,2);
+            
+        }
+          if(collision.collider.name == "portal 2") {
+            transform.position = new Vector3(190, 2, 2);
+            
+        }
+        if(collision.collider.name == "portal 3") {
+            transform.position = new Vector3(190, 2, 2);
+            
+        }
+        if(collision.collider.name == "portal 4") {
+            transform.position = new Vector3(200, 13, 2);
+            
+        }
+        if(collision.collider.name == "portal 5") {
+         transform.position = new Vector3(190, 2, 2);
+            
+        }
     }
 
     void bouncyBlock(){
