@@ -34,21 +34,11 @@ Solver2DMenuAttribute
 CCD2D
 FABRIKChain2D
 Limb
-PSDImporter
-UnityEditor
-Experimental
-AssetImporters
-PSDImporterEditor
 GridBrush
 UnityEditor
 GridBrushEditor
 GridBrushEditorBase
 GridSelection
-PopulateRuleOverideTileWizard
-UnityEditor
-AdvancedRuleOverrideTile
-UnityEngine
-RuleOverrideTile
 AssetModificationProcessor
 
 Sysroot
