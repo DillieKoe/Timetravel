@@ -65,15 +65,32 @@ public class movement : MonoBehaviour
          transform.position = new Vector3(190, 2, 2);
             
         }
+        if(collision.collider.name == "button") {
+         buttonactivate1();
+        }
+        if(collision.collider.name == "boostpad") {
+        rb.gravityScale =-1;
+        }
+
+        
+
+        if(collision.collider.name == "-boostpad") {
+        rb.gravityScale =20;
+        }
+        
     }
 
     void bouncyBlock(){
+        }
+    void buttonactivate1(){
+         rb.velocity = new Vector2 (rb.velocity.x, 150);
         }
     
     void death(){
        transform.position = new Vector3(-65, 2, 0);
         print("you died");
     }
+    
    
 
     // Update is called once per frame
@@ -96,14 +113,6 @@ public class movement : MonoBehaviour
            
        }
 
-        if (Input.GetKey(KeyCode.S))
-       {
-            rb.gravityScale =30; 
-       }
-       else 
-       {
-           rb.gravityScale =20;
-       }
          if (Input.GetKey(KeyCode.LeftShift))
        {
            speed = 40;      
@@ -139,6 +148,14 @@ public class movement : MonoBehaviour
         {
             jumpTimeCounter = 0;
         }
+    }
+
+    void FixedUpdate() {
+            
+            //rb.AddForce(transform.up * 1f);
+            // Alternatively, specify the force mode, which is ForceMode2D.Force by default
+           
+
     }
         
 }
