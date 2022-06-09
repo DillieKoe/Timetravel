@@ -14,6 +14,7 @@ public class movement : MonoBehaviour
     public Transform groundCheck;
     public float groundCheckRadius;
     public float boost = 10;
+    GameObject cload;
     
 
     void Start()
@@ -72,8 +73,6 @@ public class movement : MonoBehaviour
         if(collision.collider.name == "boostpad") {
         rb.gravityScale =-1;
         }
-
-        
 
         if(collision.collider.name == "-boostpad") {
         rb.gravityScale =20;
@@ -149,14 +148,16 @@ public class movement : MonoBehaviour
         {
             jumpTimeCounter = 0;
         }
-    }
-
-    void FixedUpdate() {
-            
-            //rb.AddForce(transform.up * 1f);
-            // Alternatively, specify the force mode, which is ForceMode2D.Force by default
-           
-
-    }
         
+           if(!grounded) {
+              Instantiate (cload, transform.position, cload.transform.rotation);
+           }else{
+               print("666");
+           }
+           
+        
+       
+    }
+
+   
 }
