@@ -43,6 +43,7 @@ public class movement : MonoBehaviour
         }
          if(collision.collider.name == "diamand") {
            print("je hebt een diamand gevonden");
+         
             
         }
          if(collision.collider.name == "portal 1") {
