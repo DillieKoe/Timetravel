@@ -34,9 +34,11 @@ public class movement : MonoBehaviour
         bool collideFromTop = false;
         bool collideFromRight = false;
         bool collideFromBottom = false;
+        bool isonside = false;
         float RectWidth = this.GetComponent<Collider2D>().bounds.size.x;
         float RectHeight = this.GetComponent<Collider2D>().bounds.size.y;
         float circleRad = collider.bounds.size.x;
+        
         
         //Output the Collider's GameObject's name
         print(collision.collider.name);
@@ -91,37 +93,79 @@ public class movement : MonoBehaviour
        
      
         
-        if(collision.collider.name == "button")
+        if(collision.collider)
         {
-        Vector3 contactPoint = collision.contacts[0].point;
+        Vector3 contactPoint = collision.contacts[1].point;
         Vector3 center = collider.bounds.center;
-        if (contactPoint.y > center.y && (contactPoint.x < center.x + RectWidth / 2 && contactPoint.x > center.x - RectWidth / 2)) {
+            if (contactPoint.y > center.y && 
+                 (contactPoint.x < center.x + RectWidth / 1 && contactPoint.x > center.x - RectWidth / 1)) {
                  collideFromTop = true;
                  print("TOP");
              }
              else if (contactPoint.y < center.y &&
-                 (contactPoint.x < center.x + RectWidth / 2 && contactPoint.x > center.x - RectWidth / 2)) {
+                 (contactPoint.x < center.x + RectWidth / 1 && contactPoint.x > center.x - RectWidth / 1)) {
                  collideFromBottom = true;
                  print("BOttem");
              }
              else if (contactPoint.x > center.x &&
-                 (contactPoint.y < center.y + RectHeight / 2 && contactPoint.y > center.y - RectHeight / 2)) {
+                 (contactPoint.y < center.y + RectHeight / 1 && contactPoint.y > center.y - RectHeight / 1)) {
                  collideFromRight = true;
                  print("RIght");
+                 isonside = true;
              }
              else if (contactPoint.x < center.x &&
-                 (contactPoint.y < center.y + RectHeight / 2 && contactPoint.y > center.y - RectHeight / 2)) {
+                 (contactPoint.y < center.y + RectHeight / 1 && contactPoint.y > center.y - RectHeight / 1)) {
                  collideFromLeft = true;
                  print("LEft");
+                 isonside = true;
              }
         }
         
         if (collideFromBottom) {
             death();
         }
+        if (collideFromLeft) {
+            
+        }
+        if (collideFromRight) {
+            
+        }
+         if (isonside)
+       {
+           rb.gravityScale = 200;    
+       }
+       else 
+       {
+          rb.gravityScale = 20;    
+       }
+           
         
-
     }
+        
+        CollisionSide CheckIfFloorIsUnder(Collider2D thisCollider, Collider2D otherCollider)
+     {
+         var closestPoint = otherCollider.ClosestPoint(thisCollider.bounds.center);
+         var distance = closestPoint - (Vector2)otherCollider.bounds.center;
+         var angle = Vector2.Angle(Vector2.right, distance);
+         if (angle < 135 && angle > 45)
+         {
+              
+             return CollisionSide.Under;
+         }
+         //The rest of sides by angle
+         
+         return CollisionSide.None;
+     }
+ 
+        public enum CollisionSide
+        {
+            Under,
+            Above,
+            Sides,
+            None,
+        }
+
+    
 
     void bouncyBlock(){
         }
@@ -132,6 +176,10 @@ public class movement : MonoBehaviour
     void death(){
        transform.position = new Vector3(-65, 2, 0);
         print("you died");
+    }
+    void maxoverdrive(){
+       rb.velocity = new Vector2 (rb.velocity.x, -150);
+       
     }
     
    
@@ -158,7 +206,9 @@ public class movement : MonoBehaviour
 
          if (Input.GetKey(KeyCode.LeftShift))
        {
-           speed = 40;      
+           speed = 40;   
+           
+           
        }
        else 
        {
@@ -194,13 +244,10 @@ public class movement : MonoBehaviour
         }
         
            if(!grounded) {
-               
-              
-           }else{
+               print("6d6");
+             }else{
                print("666");
            }
-           
-        
        
     }
 
